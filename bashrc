@@ -41,23 +41,18 @@ if [[ $TERM != "xterm" && $TERM != "xterm-color" ]]; then
   PS1='
 \w
 $ '
-  alias lt='ls -lt | head'
-  alias ll='ls -lh'
 else
   PS1="
 \[\033[34m\u@\h\033[0m\]
 \[\033[32m\w\033[0m\]
 \$(parse_git_branch)\$ "
-  alias lt='ls -lth -G | head'
-  alias ll='ls -lh -G'
-  alias ls='ls -G'
 fi
 export PS1
 
 
 alias grep='grep -i'
 alias rm='rm_safe'
-alias ls='ls --color'
+alias ls='ls'
 alias settitle='set t=$cwd:h;echo -n "^[]2;${HOSTNAME}^G"'
 alias pp='python -c "import sys, json; print json.dumps(json.load(sys.stdin), sort_keys=True, indent=4)"'
 alias diffsvn='svn diff --diff-cmd diff -x -uw'
