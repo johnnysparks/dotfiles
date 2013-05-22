@@ -98,14 +98,8 @@ endif
 
 call pathogen#infect()
 
-"if has("mouse")
-    set mouse=a
-"endif
-
-
 setlocal makeprg=tidy\ -quiet\ -errors\ %
 setlocal errorformat=line\ %l\ column\ %v\ -\ %m
-
 
 "php doc plugin
 source ~/.vim/php-doc.vim 
