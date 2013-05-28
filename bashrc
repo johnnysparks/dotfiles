@@ -6,7 +6,7 @@ export GREP_COLOR='1;32'
 export EDITOR=vim
 export TERM=xterm-color
 
-
+alias pu="phpunit --verbose --colors --debug --no-globals-backup --process-isolation"
 
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
