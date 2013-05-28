@@ -35,3 +35,7 @@ done
 cd ~/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree.git
 cd ~/
+
+
+# kick off by sourcing the new bashrc file
+source ~/.bashrc
