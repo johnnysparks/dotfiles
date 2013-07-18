@@ -107,5 +107,9 @@ inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
 
+inoremap <C-O> :CtrlP<CR>
+nnoremap <C-O> :CtrlP<CR>
+vnoremap <C-O> :CtrlP<CR>
+
 let NERDTreeShowHidden=1
 
