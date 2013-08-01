@@ -101,12 +101,15 @@ call pathogen#infect()
 setlocal makeprg=tidy\ -quiet\ -errors\ %
 setlocal errorformat=line\ %l\ column\ %v\ -\ %m
 
-
 "php doc plugin
 source ~/.vim/php-doc.vim 
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+inoremap <C-O> <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <C-O> :call PhpDocSingle()<CR> 
+vnoremap <C-O> :call PhpDocRange()<CR> 
+
+map ` 10-10+
+
+
 
 let NERDTreeShowHidden=1
 
