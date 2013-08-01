@@ -12,6 +12,17 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+  alias mysql=/usr/local/mysql/bin/mysql
+  alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+  alias mysqldump=/usr/local/mysql/bin/mysqldump
+  alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+fi
+
+
+
 function rm_safe () {
   local path
   for path in "$@"; do
@@ -79,3 +90,4 @@ function fucking_weather {
     curl -s http://thefuckingweather.com/?zipcode=$(curl -sA Mozilla http://whatismyipaddress.com/ip/$(curl -sA Mozilla http://whatismyipaddress.com | sed 's/<[^>]*>//g;s/^['$'\t'']*//g;/[A-Z]/d' | grep "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}") | grep "Postal Code:" | sed 's/<[^>]*>//g;s/Postal Code\://') | grep '"content\|"remark\|"flavor\|span' | sed 's/<[^>]*>//g;s/&\#176\;/°/;s/^['$'\t'']*//g;/^[[:space:]]/d'
 }
 alias weather='fucking_weather'
+

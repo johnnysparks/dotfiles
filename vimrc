@@ -30,9 +30,9 @@ highlight  Comment ctermfg=yellow
 "set nocompatible    " use vim defaults
 set expandtab       " ex
 set ls=2            " allways show status line
-set tabstop=4       " numbers of spaces of tab character
-set softtabstop=4
-set shiftwidth=4    " numbers of spaces to autoindent
+set tabstop=2       " numbers of spaces of tab character
+set softtabstop=2
+set shiftwidth=2    " numbers of spaces to autoindent
 "set scrolloff=3     " keep 3 lines when scrolling
 set showcmd         " display incomplete commands
 set hlsearch        " highlight searches
@@ -97,11 +97,6 @@ if has("autocmd")
 endif
 
 call pathogen#infect()
-
-"if has("mouse")
-    set mouse=a
-"endif
-
 
 setlocal makeprg=tidy\ -quiet\ -errors\ %
 setlocal errorformat=line\ %l\ column\ %v\ -\ %m

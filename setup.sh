@@ -30,4 +30,7 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+cd ~/dotfiles/vim/bundle/
+git clone https://github.com/scrooloose/nerdtree.git
+
 source ~/.bashrc
