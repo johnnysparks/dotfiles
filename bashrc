@@ -12,6 +12,9 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+
+alias flushdns='sudo /etc/init.d/nscd restart; sudo /etc/init.d/dnsmasq restart'
+
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
@@ -19,7 +22,9 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   alias mysqladmin=/usr/local/mysql/bin/mysqladmin
   alias mysqldump=/usr/local/mysql/bin/mysqldump
   alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+
 fi
+
 
 
 
