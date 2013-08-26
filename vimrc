@@ -5,9 +5,6 @@ endif
 
 map K i<Enter><Esc> 
 
-" switch to insert with jj
- imap jj <Esc>
-
  " disable arrow keys
     map <up> <C-n>
     map <down> <C-n>
@@ -30,9 +27,9 @@ highlight  Comment ctermfg=yellow
 "set nocompatible    " use vim defaults
 set expandtab       " ex
 set ls=2            " allways show status line
-set tabstop=2       " numbers of spaces of tab character
-set softtabstop=2
-set shiftwidth=2    " numbers of spaces to autoindent
+set tabstop=4       " numbers of spaces of tab character
+set softtabstop=4
+set shiftwidth=4    " numbers of spaces to autoindent
 "set scrolloff=3     " keep 3 lines when scrolling
 set showcmd         " display incomplete commands
 set hlsearch        " highlight searches
