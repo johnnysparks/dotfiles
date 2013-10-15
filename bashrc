@@ -6,7 +6,7 @@ export GREP_COLOR='1;32'
 export EDITOR=vim
 export TERM=xterm-color
 
-alias pu="phpunit --verbose --colors --debug --no-globals-backup --process-isolation"
+alias pu="phpunit --colors --no-configuration"
 
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
@@ -80,8 +80,12 @@ export HISTCONTROL=ignoreboth
 alias gitbranch="git name-rev --name-only HEAD"
 
 # ADD PYTHIN PATH
-export PATH=$PATH:$home/bin:/usr/local/python/bin/
-export PYTHONPATH=$PYTHONPATH:/home/johnny/sandbox/app/bin/
+export PATH=$PATH:$home/bin:/usr/local/python/bin
+export PYTHONPATH=$PYTHONPATH:/home/johnny/sandbox/app/bin
+
+# ADD PHP UNIT
+export PATH=$PATH:$home/phpunit/PHPUnit/Framework
+
 
 source ~/.git-completion.sh
 
