@@ -21,7 +21,7 @@ map K i<Enter><Esc>
 
 
 set number
-set list!
+set nolist
 "set listchars=tab:._
 highlight  Comment ctermfg=yellow
 "set nocompatible    " use vim defaults
@@ -94,9 +94,6 @@ if has("autocmd")
 endif
 
 call pathogen#infect()
-
-setlocal makeprg=tidy\ -quiet\ -errors\ %
-setlocal errorformat=line\ %l\ column\ %v\ -\ %m
 
 "php doc plugin
 source ~/.vim/php-doc.vim 

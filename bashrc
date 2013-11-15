@@ -8,11 +8,6 @@ export TERM=xterm-color
 
 alias pu="phpunit --colors --no-configuration"
 
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
-fi
-
-
 alias flushdns='sudo /etc/init.d/nscd restart; sudo /etc/init.d/dnsmasq restart'
 
 platform='unknown'
@@ -79,12 +74,8 @@ export HISTCONTROL=ignoreboth
 
 alias gitbranch="git name-rev --name-only HEAD"
 
-# ADD PYTHIN PATH
-export PATH=$PATH:$home/bin:/usr/local/python/bin
-export PYTHONPATH=$PYTHONPATH:/home/johnny/sandbox/app/bin
 
 # ADD PHP UNIT
-export PATH=$PATH:$home/phpunit/PHPUnit/Framework
 
 
 source ~/.git-completion.sh
@@ -100,3 +91,8 @@ function fucking_weather {
 }
 alias weather='fucking_weather'
 
+
+# ADD PYTHIN PATH
+export PATH=$PATH:$home/phpunit/PHPUnit/Framework
+export PATH=$HOME/.python/bin:$PATH
+unset PYTHONPATH
