@@ -44,8 +44,6 @@ function parse_git_branch {
   echo "("${ref#refs/heads/}")"
 }
 
-#PS1="\w \$(parse_git_branch)\$ 
-
 
 if [[ $TERM != "xterm" && $TERM != "xterm-color" ]]; then
   echo "TERM=vim"
@@ -63,7 +61,6 @@ export PS1
 
 alias grep='grep -i'
 alias rm='rm_safe'
-alias ls='ls'
 alias settitle='set t=$cwd:h;echo -n "^[]2;${HOSTNAME}^G"'
 alias pp='python -c "import sys, json; print json.dumps(json.load(sys.stdin), sort_keys=True, indent=4)"'
 alias diffsvn='svn diff --diff-cmd diff -x -uw'
@@ -71,11 +68,6 @@ alias diffsvn='svn diff --diff-cmd diff -x -uw'
 
 export HISTSIZE=5000
 export HISTCONTROL=ignoreboth
-
-alias gitbranch="git name-rev --name-only HEAD"
-
-
-# ADD PHP UNIT
 
 
 source ~/.git-completion.sh
