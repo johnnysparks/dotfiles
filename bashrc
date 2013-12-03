@@ -75,7 +75,7 @@ source ~/.git-completion.sh
 function git-time {
     for k in `git branch|perl -pe s/^..//`;
     do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;
-    done|sort -r
+    done
 }
 
 function fucking_weather {
@@ -85,6 +85,8 @@ alias weather='fucking_weather'
 
 
 # ADD PYTHIN PATH
+unset PATH
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/home/johnny/bin
 export PATH=$PATH:$home/phpunit/PHPUnit/Framework
 export PATH=$HOME/.python/bin:$PATH
 unset PYTHONPATH
