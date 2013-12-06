@@ -5,10 +5,12 @@ export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 export EDITOR=vim
 export TERM=xterm-color
+export HISTSIZE=5000
+export HISTCONTROL=ignoreboth
 
-alias pu="phpunit --colors --no-configuration"
-
+# shortcuts
 alias flushdns='sudo /etc/init.d/nscd restart; sudo /etc/init.d/dnsmasq restart'
+alias rm='rm_safe'
 
 platform='unknown'
 unamestr=`uname`
@@ -21,8 +23,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 
-
-
+# FUNCTIONS
 function rm_safe () {
   local path
   for path in "$@"; do
@@ -39,12 +40,18 @@ function rm_safe () {
   done
 }
 
+function git-time {
+    for k in `git branch|perl -pe s/^..//`;
+    do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;
+    done
+}
+
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo "("${ref#refs/heads/}")"
 }
 
-
+# TERMINAL PROMPT SETUP
 if [[ $TERM != "xterm" && $TERM != "xterm-color" ]]; then
   echo "TERM=vim"
   PS1='
@@ -59,32 +66,9 @@ fi
 export PS1
 
 
-alias grep='grep -i'
-alias rm='rm_safe'
-alias settitle='set t=$cwd:h;echo -n "^[]2;${HOSTNAME}^G"'
-alias pp='python -c "import sys, json; print json.dumps(json.load(sys.stdin), sort_keys=True, indent=4)"'
-alias diffsvn='svn diff --diff-cmd diff -x -uw'
 
 
-export HISTSIZE=5000
-export HISTCONTROL=ignoreboth
-
-
-source ~/.git-completion.sh
-
-function git-time {
-    for k in `git branch|perl -pe s/^..//`;
-    do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;
-    done
-}
-
-function fucking_weather {
-    curl -s http://thefuckingweather.com/?zipcode=$(curl -sA Mozilla http://whatismyipaddress.com/ip/$(curl -sA Mozilla http://whatismyipaddress.com | sed 's/<[^>]*>//g;s/^['$'\t'']*//g;/[A-Z]/d' | grep "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}") | grep "Postal Code:" | sed 's/<[^>]*>//g;s/Postal Code\://') | grep '"content\|"remark\|"flavor\|span' | sed 's/<[^>]*>//g;s/&\#176\;/°/;s/^['$'\t'']*//g;/^[[:space:]]/d'
-}
-alias weather='fucking_weather'
-
-
-# ADD PYTHIN PATH
+# ADD PYTH0N PATH
 unset PATH
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/home/johnny/bin
 export PATH=$PATH:$home/phpunit/PHPUnit/Framework
