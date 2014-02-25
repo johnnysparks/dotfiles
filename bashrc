@@ -10,7 +10,7 @@ export HISTCONTROL=ignoreboth
 
 # shortcuts
 alias flushdns='sudo /etc/init.d/nscd restart; sudo /etc/init.d/dnsmasq restart'
-alias rm='rm_safe'
+#alias rm='rm_safe'
 
 platform='unknown'
 unamestr=`uname`
@@ -65,12 +65,28 @@ else
 fi
 export PS1
 
-
-
-
 # ADD PYTH0N PATH
 unset PATH
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/home/johnny/bin
-export PATH=$PATH:$home/phpunit/PHPUnit/Framework
-export PATH=$HOME/.python/bin:$PATH
+PATH=$PATH:$HOME/.rvm/bin 
+
 unset PYTHONPATH
+
+# GO PATH
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
+
+
+# Add RVM to PATH for version swapping
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  source $HOME/.rvm/scripts/rvm;
+fi
+
+# CLI Git completion installation
+. $HOME/dotfiles/git-completion.bash
+
+
+
+
+# added by travis gem
+[ -f /Users/johnny/.travis/travis.sh ] && source /Users/johnny/.travis/travis.sh

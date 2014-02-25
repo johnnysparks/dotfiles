@@ -1,9 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/johnny.fuchs/.vim'
-let g:netrw_dirhist_2='/Users/johnny.fuchs/code/shoutlet/chromeJasmine/img'
-let g:netrw_dirhist_3='/Users/johnny.fuchs/code/shoutlet/chromeJasmine'
-let g:netrw_dirhist_4='/Users/johnny.fuchs/code/shoutlet/chromeJasmine/img'
-let g:netrw_dirhist_5='/Users/johnny.fuchs/code/shoutlet/chromeJasmine/js'
-let g:netrw_dirhist_6='/Users/johnny.fuchs/.vim'
-let g:netrw_dirhist_7='/Users/johnny.fuchs/dotfiles/vim'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/johnny/dev/therealreal/server/real-server/app/models/auspient'
+let g:netrw_dirhist_2='/Users/johnny/dev/therealreal/apps/real-ios-commerce'
+let g:netrw_dirhist_3='/Users/johnny/dev/therealreal/apps/real-ios-commerce/Scripts'
+let g:netrw_dirhist_4='/Users/johnny/dev/therealreal/apps/real-ios-commerce'
+let g:netrw_dirhist_5='/Users/johnny/dev/therealreal/apps/real-ios-commerce/shop.xcodeproj'
